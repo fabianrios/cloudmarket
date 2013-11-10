@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  price: 9.99
+  highprice: 9.99
+  category: MyString
+  quantity: 1
+  storeName: MyString
+  adress: MyString
+
+two:
+  title: MyString
+  price: 9.99
+  highprice: 9.99
+  category: MyString
+  quantity: 1
+  storeName: MyString
+  adress: MyString

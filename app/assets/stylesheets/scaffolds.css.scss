@@ -1,0 +1,207 @@
+@import "compass/css3";
+
+
+body{
+  background: url("retina_wood.png") repeat;
+}
+
+header{
+  position: relative;
+  top: 1.5em;
+  height: 135px;
+}
+
+header h1 {
+  color: #5f6269;
+  margin: 0;
+  font-size: 50px;
+}
+
+.listado{
+  list-style-type: none;
+  width: 100%;
+  margin: 50px 0 0 0;
+  padding: 0;
+}
+
+.listado li{
+  position: relative;
+  display: block;
+  min-height: 90px;
+  margin: 13px 0;
+  background:#EFEDE5;
+  border-bottom: 9px solid #B2AFA3;
+  border-radius: 5px;
+  @include border-radius(5px);
+}
+
+.listado li:hover, .listado li:first-child{
+  -webkit-box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 3px 10px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 3px 10px rgba(50, 50, 50, 0.75);
+}
+
+.title-info{
+  padding: 5px 10px;
+  h4{
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    color: #5f6269;
+  }
+}
+
+
+.more-info{
+  width: 100%;
+  background: #fff;
+  margin: 0;
+  font-weight: 200;
+  padding:2px 8px;
+  position: absolute;
+  bottom: -3px;
+  color: #6d6e7a;
+  @include border-bottom-radius(5px);
+  span{
+    font-size: 16px;
+  }
+}
+
+
+.prices{
+  float: right;
+  span{
+    padding: 5px 10px;
+    font-size: 1em;
+    color: #fff;
+    position: relative;
+    bottom: 12px;
+    background: #3ACA78;
+    @include border-radius(4px);
+    &.supermarket{
+      background:#ed5f57;
+      margin-left: 5px;
+    }
+  }
+}
+
+.the-category{
+  position: absolute;
+  top: 2px;
+  right: 7px;
+  margin: 0;
+  color: #6D6B6B;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.show-plaza{
+  width: 14px;
+  height: 14px;
+  border-radius: 25px;
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+  display: inline-block;
+  background: #3ACA78;
+  border: 1px solid white;
+}
+
+.show-market{
+  width: 14px;
+  height: 14px;
+  border-radius: 25px;
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+  display: inline-block;
+  background: #ED5F57;
+  border: 1px solid white;
+}
+
+.info{
+  position: relative;
+  top: 35px;
+}
+
+.the-category:after{
+  width: 14px;
+  height: 14px;
+  border-radius: 25px;
+  position: relative;
+  top: 2px;
+  right: -3px;
+  content:"hola";
+  text-indent: -9999px;
+  display: inline-block;
+}
+
+.the-category.Frutas:after{
+  background: #fff200;
+}
+.the-category.Hortalizas:after{
+  background: #4DC797;
+}
+
+.the-category.Tuberculos:after{
+  background: #7f6d14;
+}
+
+.the-category.Platanos:after{
+  background: #D0C6B1;
+}
+.the-category.Huevos:after{
+  background: #fffce7;
+}
+
+.the-category.Granos:after{
+  background: #fdb913;
+}
+
+.the-category.Lacteos:after{
+  background: #FAFAFA;
+}
+.the-category.Carnes:after{
+  background: #ED5F57;
+}
+
+
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

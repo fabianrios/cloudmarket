@@ -1,0 +1,55 @@
+
+<div class="row">
+  <div class="large-8 small-12 columns large-centered">
+    <ul class="no-bullet listado" >
+      <li ng-repeat="product in products | filter:query | orderBy:orderProp" class="{{product.category}}">
+        <div class="title-info">
+          <h4 ng-bind="product.title"></h4>
+          <div class="prices">
+            <span class="market" ng-bind="product.price | currency:'$'"></span>
+            <span class="supermarket" ng-bind="product.highprice | currency:'$'"></span>
+          </div>
+        </div>
+        <div class="more-info">
+          <span>{{product.quantity}} KILO</span> <span class="the-category {{product.category}}" ng-bind="product.category"></span>
+        </div>
+      </li>
+    </ul>
+   </div>
+</div>
+
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Highprice</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Storename</th>
+    <th>Adress</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.title %></td>
+    <td><%= product.price %></td>
+    <td><%= product.highprice %></td>
+    <td><%= product.category %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.storeName %></td>
+    <td><%= product.adress %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path %>
