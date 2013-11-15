@@ -3,9 +3,6 @@
 
     <h1 class="subheader">Nuevo Producto <small>en la Alacena de <%= @user.name %></small></h1>
 
-    <label>Ubicación: {{chosenPlace}}</label>
-    <input type="text" ng-model="lugar" googleplace/>
-
     <%= render 'form' %>
 
     <%= link_to 'Volver', user_products_path(@user), :class => 'button terciary' %>

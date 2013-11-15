@@ -3,47 +3,6 @@
 <div class="row">
   <div class="large-8 small-12 columns large-centered">
 
-    <form class="custom">
-      <input type="text" class="large" placeholder="Escribe que producto estas buscando" ng-model="query">
-
-
-      <div class="row">
-        <div class="large-6 columns"></div>
-        <div class="large-6 columns">
-          <label for="customDropdown">Orden:</label>
-          <select id="customDropdown" ng-model="orderProp" class="form-control">
-            <option value="title">Alfabético</option>
-            <option value="price">Económico</option>
-          </select>
-        </div>
-      </div>
-
-    </form>
-
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="large-8 small-12 columns large-centered">
-    <ul class="no-bullet listado" >
-      <li ng-repeat="product in products | filter:query | orderBy:orderProp" class="{{product.category}}">
-        <div class="title-info">
-          <h4 ng-bind="product.title"></h4>
-          <div class="prices">
-            <span class="market" ng-bind="product.price | currency:'$'"></span>
-            <span class="supermarket" ng-bind="product.highprice | currency:'$'"></span>
-          </div>
-        </div>
-        <div class="more-info">
-          <span class="left">{{product.quantity}} KILO</span> <span class="the-category {{product.category}}" ng-bind="product.category"></span>
-          <div class="text-center place">
-            <strong ng-bind="product.storeName"></strong>
-            <small ng-bind="product.adress"></small>
-          </div>
-        </div>
-      </li>
-    </ul>
     <h3 class="subheader">Alacena de <%= image_tag @user.picture, :class => 'circle' %> <%= @user.name %></h3>
     <hr>
 
@@ -52,12 +11,15 @@
           <% for product in @products %>
               <li class="<%= product.category %>">
                 <div class="title-info">
-                  <h4><%= product.title %>
-                    <%= link_to(edit_user_product_path(@user, product), :class=>"edit") do %>
-                        <span class="icon-pencil"></span>
-                    <% end %>
-                    <%= link_to([@user, product], :class=>"delete", :confirm => 'Estas seguro?', :method => :delete) do %>
-                        <span class="icon-remove"></span>
+                  <h4>
+                    <%= product.title %>
+                    <% if current_user.id == product.user_id %>
+                        <%= link_to(edit_user_product_path(@user, product), :class=>"edit") do %>
+                            <span class="icon-pencil"></span>
+                        <% end %>
+                        <%= link_to([@user, product], :class=>"delete", :confirm => 'Estas seguro?', :method => :delete) do %>
+                            <span class="icon-remove"></span>
+                        <% end %>
                     <% end %>
                     </h4>
                   <div class="prices">

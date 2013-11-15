@@ -1,6 +1,6 @@
 <% content_for :title, "Nuevo producto - cloudmarket" %>
 
-<% categories = { 'Frutas' => 'Frutas', 'Carnes' => 'Carnes', 'Pescados' => 'Pescados', 'Granos y procesados' => 'Granos y procesados', 'Tuberculos' => 'Tuberculos', 'Hortalizas' => 'Hortalizas' }%>
+<% categories = { 'Frutas' => 'Frutas', 'Carnes' => 'Carnes', 'Pescados' => 'Pescados', 'Granos y procesados' => 'Granos y procesados', 'Tuberculos' => 'Tuberculos', 'Hortalizas' => 'Hortalizas', 'Licores' => 'Licores', 'Aseo' => 'Aseo' }%>
 
 <%= form_for([@user, @product] , :html => {:class => 'custom'}) do |f| %>
     <% if @product.errors.any? %>
@@ -17,7 +17,7 @@
     <div class="row">
       <div class="large-8 columns">
         <div class="field">
-          <label>Ubicación: {{chosenPlace}}</label>
+          <label>Ubicación:</label>
           <input type="text" ng-model="lugar" googleplace/>
         </div>
         <div class="field">
