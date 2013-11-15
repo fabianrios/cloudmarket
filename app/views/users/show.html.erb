@@ -1,35 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Provider:</b>
-  <%= @user.provider %>
-</p>
-
-<p>
-  <b>Uid:</b>
-  <%= @user.uid %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>Admin:</b>
-  <%= @user.admin %>
-</p>
-
-<p>
-  <b>Picture:</b>
-  <%= image_tag @user.picture %>
-</p>
+<div class="row">
+  <div class="large-12 columns">
+    <h3 class="subheader"><%= image_tag @user.picture, :class => 'circle' %> <%= @user.name %> <small><%= mail_to @user.email %></small></h3>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <br />
+
+    <%= link_to 'Editar', edit_user_path(@user) %> |
+    <%= link_to 'Volver', users_path %>
+
+
+  </div>
+</div>
+

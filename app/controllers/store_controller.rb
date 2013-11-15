@@ -2,7 +2,8 @@ class StoreController < ApplicationController
 
 
   def index
-    @products = Product.all
+    @products = Product.where(user_id: 1)
+    @to_products = Product.where(user_id: 2)
     # was @products = Product.all
 
     respond_to do |format|
