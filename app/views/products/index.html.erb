@@ -44,10 +44,8 @@
     <% end %>
 
     <br>
-    <% if !product.blank? %>
-        <% if current_user.id == product.user_id %>
-            <%= link_to 'Crear Producto', new_user_product_path(@user), :class => "button right success" %>
-        <% end %>
+    <% if current_user.id == @user.id %>
+       <%= link_to 'Crear Producto', new_user_product_path(@user), :class => "button right success" %>
     <% end %>
    </div>
 </div>
