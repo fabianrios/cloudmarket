@@ -13,12 +13,14 @@
                 <div class="title-info">
                   <h4>
                     <%= product.title %>
-                    <% if product.user_id.nil? && current_user.id == product.user_id %>
-                        <%= link_to(edit_user_product_path(@user, product), :class=>"edit") do %>
-                            <span class="icon-pencil"></span>
-                        <% end %>
-                        <%= link_to([@user, product], :class=>"delete", :confirm => 'Estas seguro?', :method => :delete) do %>
-                            <span class="icon-remove"></span>
+                    <% if !product.blank? %>
+                        <% if current_user.id == product.user_id %>
+                            <%= link_to(edit_user_product_path(@user, product), :class=>"edit") do %>
+                                <span class="icon-pencil"></span>
+                            <% end %>
+                            <%= link_to([@user, product], :class=>"delete", :confirm => 'Estas seguro?', :method => :delete) do %>
+                                <span class="icon-remove"></span>
+                            <% end %>
                         <% end %>
                     <% end %>
                     </h4>
@@ -42,8 +44,10 @@
     <% end %>
 
     <br>
-    <% if product.user_id.nil? && current_user.id == product.user_id %>
-        <%= link_to 'Crear Producto', new_user_product_path(@user), :class => "button right success" %>
+    <% if !product.blank? %>
+        <% if current_user.id == product.user_id %>
+            <%= link_to 'Crear Producto', new_user_product_path(@user), :class => "button right success" %>
+        <% end %>
     <% end %>
    </div>
 </div>

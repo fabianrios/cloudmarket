@@ -236,6 +236,7 @@ a{
 input[type="search"].large{
   height: 50px;
   @include border-radius(5px);
+  font-size: 1.1em;
 }
 
 div {
