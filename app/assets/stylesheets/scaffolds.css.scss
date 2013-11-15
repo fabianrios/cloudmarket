@@ -31,18 +31,29 @@ header{
   h1 {
     a{
       color: #5f6269;
+      letter-spacing: -2px;
+      font-size: 1.35em;
+      display: block;
+      margin-bottom: 5px;
       &:hover{
          color:darken(#5f6269,10%);
       }
     }
     margin: 0;
-    font-size: 50px;
   }
 }
 
+h4{
+  small{
+    display: block;
+    margin-left: 58px;
+  }
+}
 
 .pretitle{
   line-height: .4;
+  letter-spacing: -1px;
+  font-size: 1.35em;
 }
 
 .listado{
@@ -73,7 +84,7 @@ header{
   padding: 5px 10px;
   min-height: 65px;
   h4{
-    font-size: 22px;
+    font-size: 1.3em;
     margin: 0;
     padding: 0;
     color: #5f6269;
@@ -295,5 +306,13 @@ and (min-width : 768px) {
     position: relative;
     top: 30px;
   }
+
+  h4{
+    small{
+      display: inline;
+      margin-left: 10px;
+    }
+  }
+
 
 }

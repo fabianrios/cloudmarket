@@ -3,7 +3,7 @@
 <div class="row">
   <div class="large-12 columns">
     <% if current_user.id == @user.id %>
-    <h1 class="subheader">Nuevo Producto <small>en la Alacena de <%= @user.name %></small></h1>
+    <h2 class="subheader">Nuevo Producto </h2>
 
     <%= render 'form' %>
     <% else %>
