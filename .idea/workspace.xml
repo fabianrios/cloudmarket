@@ -4,7 +4,7 @@
     <list default="true" id="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" name="Default" comment="" />
     <ignored path="cloudmarket.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.html.erb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384534191318" ignored="false" />
+    <file path="/application.html.erb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384535745576" ignored="false" />
     <file path="/dummy.xml" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384531846398" ignored="false" />
     <file path="/products.js.coffee" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384107137771" ignored="false" />
     <file path="/Dummy.txt" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384465121017" ignored="false" />
@@ -54,19 +54,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="59" selection-start="1583" selection-end="1583" vertical-scroll-proportion="-4.375">
+            <state line="29" column="25" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.28455284">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="178" selection-start="577" selection-end="577" vertical-scroll-proportion="0.36585367">
+            <state line="2" column="35" selection-start="124" selection-end="124" vertical-scroll-proportion="-1.25">
               <folding />
             </state>
           </provider>
@@ -168,8 +168,8 @@
         <option value="$PROJECT_DIR$/app/views/store/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/directives.js" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -917,13 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="59" selection-start="1583" selection-end="1583" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/store/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="83" selection-start="1116" selection-end="1136" vertical-scroll-proportion="-7.25">
@@ -940,7 +933,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="178" selection-start="577" selection-end="577" vertical-scroll-proportion="0.36585367">
+        <state line="2" column="35" selection-start="124" selection-end="124" vertical-scroll-proportion="-1.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="25" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.28455284">
           <folding />
         </state>
       </provider>
