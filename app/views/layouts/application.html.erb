@@ -16,6 +16,7 @@
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
+    <link rel="stylesheet" href="http://i.icomoon.io/public/temp/b70ee17e71/UntitledProject1/style.css">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
@@ -26,44 +27,24 @@
 
 
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-6 columns">
         <header>
-          <h1><%= image_tag("logo.png") %>CloudMarket</h1>
-          <h4 class="subheader no-margin">La forma más fácil de hacer mercado.</h4>
+          <h1 class="no-margin"><a href="http://localhost:3000/"><%= image_tag("logo.png") %>CloudMarket </a></h1>
+          <h4 class="subheader no-margin pretitle">La forma más fácil de hacer mercado.</h4>
         </header>
       </div>
-    </div>
-
-
-  <br>
-  <div class="row">
-    <div class="large-8 small-12 columns large-centered">
-
-      <form class="custom">
-        <label>Escribe que producto estas buscando.</label>
-        <input type="text" class="" placeholder="Buscar" ng-model="query">
-
-        <div>
-            <div>selection is: {{chosenPlace}}</div>
-            <div><input type="text" ng-model="chosenPlace" googleplace/></div>
+      <div class="large-6 columns">
+        <div class="user_nav right">
+          <% if current_user %>
+              <%= link_to  'Mi Perfil' ,user_products_path(current_user.id), :class => "button terciary small radius" %>
+              <%= link_to image_tag(current_user.picture, :class => 'circle'), user_products_path(current_user.id) %> <strong><%= current_user.name %> </strong>
+              <%= link_to "Salir", signout_path, id: "sign_out" %>
+          <% else %>
+              <%= link_to "Conectar con Facebook", "/auth/facebook", id: "sign_in", :class => "button round" %>
+          <% end %>
         </div>
-
-
-        <div class="row">
-          <div class="large-6 columns"></div>
-          <div class="large-6 columns">
-            <label for="customDropdown">Orden:</label>
-            <select id="customDropdown" ng-model="orderProp" class="form-control">
-              <option value="title">Alfabético</option>
-              <option value="price">Económico</option>
-            </select>
-          </div>
-        </div>
-      </form>
-
-
+      </div>
     </div>
-  </div>
 
 
     <%= yield %>

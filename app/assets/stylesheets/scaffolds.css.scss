@@ -5,16 +5,44 @@ body{
   background: url("retina_wood.png") repeat;
 }
 
+/*COMMUNERS*/
+
+input.hide{
+  display: none;
+}
+
+.no-margin{
+  margin: 0;
+}
+
+.place{
+  border-top: 1px solid rgba(50,50,50,.1);
+  margin: 0 auto;
+  display: inline-block;
+  width: 100%;
+}
+
+/*/COMMUNERS*/
+
 header{
   position: relative;
   top: 1.5em;
   height: 135px;
+  h1 {
+    a{
+      color: #5f6269;
+      &:hover{
+         color:darken(#5f6269,10%);
+      }
+    }
+    margin: 0;
+    font-size: 50px;
+  }
 }
 
-header h1 {
-  color: #5f6269;
-  margin: 0;
-  font-size: 50px;
+
+.pretitle{
+  line-height: .4;
 }
 
 .listado{
@@ -43,11 +71,23 @@ header h1 {
 
 .title-info{
   padding: 5px 10px;
+  min-height: 65px;
   h4{
     font-size: 22px;
     margin: 0;
     padding: 0;
     color: #5f6269;
+    a{
+      &.edit{
+        color: gray;
+      }
+      &.delete{
+        color: #e04942;
+      }
+    }
+  }
+  h6{
+    width: 40%;
   }
 }
 
@@ -58,7 +98,7 @@ header h1 {
   margin: 0;
   font-weight: 200;
   padding:2px 8px;
-  position: absolute;
+  position: relative;
   bottom: -3px;
   color: #6d6e7a;
   @include border-bottom-radius(5px);
@@ -70,12 +110,12 @@ header h1 {
 
 .prices{
   float: right;
+  position: relative;
+  top: -27px;
   span{
     padding: 5px 10px;
     font-size: 1em;
     color: #fff;
-    position: relative;
-    bottom: 12px;
     background: #3ACA78;
     @include border-radius(4px);
     &.supermarket{
@@ -165,7 +205,38 @@ header h1 {
   background: #ED5F57;
 }
 
+.action-buttons{
+  float: right;
+  position: relative;
+  top: 15px;
+}
 
+hr{
+  border-color: rgba(255,255,255,.3);
+}
+
+.circle{
+  @include border-radius(100%);
+  border: 1px solid white;
+  position: relative;
+  top: 18px;
+}
+
+a{
+  .circle{
+    &:hover{
+      @include transition-property(rotate);
+      @include transition-duration(.3s);
+      @include transition-timing-function(ease-in);
+      @include rotate(360deg);
+    }
+  }
+}
+
+input[type="search"].large{
+  height: 50px;
+  @include border-radius(5px);
+}
 
 div {
   &.field, &.actions {
@@ -204,4 +275,16 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+
+@media only screen
+and (min-width : 768px) {
+/* Styles */
+
+  .user_nav{
+    position: relative;
+    top: 30px;
+  }
+
 }

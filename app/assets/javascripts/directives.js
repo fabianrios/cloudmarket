@@ -21,7 +21,7 @@ app.directive('googleplace', function() {
 
 app.factory("Product", [
     "$resource", function($resource) {
-        return $resource("/products/:id", {
+        return $resource("/store/index", {
             id: "@id"
         }, {
             update: {

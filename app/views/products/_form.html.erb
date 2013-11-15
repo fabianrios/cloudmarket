@@ -1,45 +1,62 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<% content_for :title, "Nuevo producto - cloudmarket" %>
 
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<% categories = { 'Frutas' => 'Frutas', 'Carnes' => 'Carnes', 'Pescados' => 'Pescados', 'Granos y procesados' => 'Granos y procesados', 'Tuberculos' => 'Tuberculos', 'Hortalizas' => 'Hortalizas' }%>
+
+<%= form_for([@user, @product] , :html => {:class => 'custom'}) do |f| %>
+    <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+          <ul>
+            <% @product.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="row">
+      <div class="large-8 columns">
+        <div class="field">
+          <label>Ubicación: {{chosenPlace}}</label>
+          <input type="text" ng-model="lugar" googleplace/>
+        </div>
+        <div class="field">
+          <%= f.label :title, 'Nombre' %>
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.label :storeName, 'Nombre del lugar' %>
+          <%= f.text_field :storeName %>
+        </div>
+        <%= f.text_field :adress, "ng-model" => "lugar", :class => "hide" %>
+      </div>
+      <div class="large-4 columns">
+        <div class="field">
+          <%= f.label :price, 'Precio' %>
+          <%= f.text_field :price %>
+        </div>
+        <div class="field">
+          <%= f.label :highprice, 'Precio promedio' %>
+          <%= f.text_field :highprice %>
+        </div>
+        <div class="field">
+          <%= f.label :category, 'Categoría' %>
+          <% list = categories.sort %>
+          <%= f.select :category, list %>
+        </div>
+        <div class="field">
+          <%= f.label :quantity, 'Cantidad' %>
+          <%= f.number_field :quantity %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :highprice %><br />
-    <%= f.text_field :highprice %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity %><br />
-    <%= f.number_field :quantity %>
-  </div>
-  <div class="field">
-    <%= f.label :storeName %><br />
-    <%= f.text_field :storeName %>
-  </div>
-  <div class="field">
-    <%= f.label :adress %><br />
-    <%= f.text_field :adress %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="actions">
+          <%= f.submit "Continuar", class: 'button success right' %>
+        </div>
+      </div>
+    </div>
 <% end %>
+
+

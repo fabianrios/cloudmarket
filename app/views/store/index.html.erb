@@ -1,0 +1,51 @@
+<% content_for :title, "Home - cloudmarket" %>
+
+<div class="row">
+  <div class="large-8 small-12 columns large-centered">
+
+    <form class="custom">
+      <input type="search" class="large" placeholder="Escribe el producto que estas buscando" ng-model="query">
+      <div class="row">
+        <div class="large-6 columns">
+          <input type="search" class="large" placeholder="Donde" ng-model="lugar">
+        </div>
+        <div class="large-6 columns">
+          <label for="customDropdown">Orden:</label>
+          <select id="customDropdown" ng-model="orderProp" class="form-control">
+            <option value="title">Alfabético</option>
+            <option value="price">Económico</option>
+            <option value="category">Categoría</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-8 small-12 columns large-centered">
+    <ul class="no-bullet listado" >
+      <li ng-repeat="product in products | filter:query | orderBy:orderProp | filter:lugar" class="{{product.category}}">
+        <div class="title-info">
+          <h4 ng-bind="product.title"></h4>
+          <h6 class="subheader"><small>{{ product.updated_at | date:'MMMM dd, yyyy' }}</small></h6>
+          <div class="prices">
+            <span class="market" ng-bind="product.price | currency:'$'"></span>
+            <span class="supermarket" ng-bind="product.highprice | currency:'$'"></span>
+          </div>
+        </div>
+        <div class="more-info">
+          <span class="left">{{product.quantity}} KILO</span> <span class="the-category {{product.category}}" ng-bind="product.category"></span>
+          <div class="text-center place">
+            <strong ng-bind-html-unsafe="product.storeName"></strong>
+            <small ng-bind="product.adress"></small>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<pre>{{products | json}}</pre>

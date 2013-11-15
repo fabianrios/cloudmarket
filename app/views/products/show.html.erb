@@ -1,40 +1,32 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title, "#{@product.category} - #{@product.title} - CloudMarket" %>
 
-<p>
-  <b>Title:</b>
-  <%= @product.title %>
-</p>
+<div class="row">
+  <div class="small-12 large-8 large-centered columns">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
+    <ul class="no-bullet listado">
+      <li class="<%= @product.category %>">
+        <div class="title-info">
+          <h4><%= @product.title %></h4>
+          <div class="prices">
+            <span class="market"><%= @product.price %></span>
+            <span class="supermarket"><%= @product.highprice %></span>
+          </div>
+        </div>
+        <div class="more-info">
+          <span class="left"><%= @product.quantity %> KILO</span> <span class="the-category <%= @product.category %>"><%= @product.category %></span>
+          <div class="text-center place">
+              <strong><%= @product.storeName %></strong>
+              <small><%= @product.adress %></small>
+          </div>
+        </div>
+      </li>
+    </ul>
 
-<p>
-  <b>Highprice:</b>
-  <%= @product.highprice %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @product.category %>
-</p>
-
-<p>
-  <b>Quantity:</b>
-  <%= @product.quantity %>
-</p>
-
-<p>
-  <b>Storename:</b>
-  <%= @product.storeName %>
-</p>
-
-<p>
-  <b>Adress:</b>
-  <%= @product.adress %>
-</p>
+    <%= link_to 'Editar', edit_user_product_path(@product) %> |
+    <%= link_to 'Volver', user_product_path(@user)  %>
+  </div>
+</div>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+

@@ -1,5 +1,15 @@
-<h1>New product</h1>
+<div class="row">
+  <div class="large-12 columns">
 
-<%= render 'form' %>
+    <h1 class="subheader">Nuevo Producto <small>en la Alacena de <%= @user.name %></small></h1>
 
-<%= link_to 'Back', products_path %>
+    <label>Ubicación: {{chosenPlace}}</label>
+    <input type="text" ng-model="lugar" googleplace/>
+
+    <%= render 'form' %>
+
+    <%= link_to 'Volver', user_products_path(@user), :class => 'button terciary' %>
+
+  </div>
+</div>
+

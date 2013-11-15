@@ -1,6 +1,9 @@
-<h1>Editing product</h1>
+<div class="row">
+  <div class="large-12 columns">
+    <h1 class="subheader">Nuevo Producto <small>en la Alacena de <%= @user.name %></small></h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+    <%= link_to 'Volver', user_product_path %>
+   </div>
+</div>
