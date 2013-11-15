@@ -4,7 +4,7 @@
     <list default="true" id="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" name="Default" comment="" />
     <ignored path="cloudmarket.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/application.html.erb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384535745576" ignored="false" />
+    <file path="/application.html.erb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384535950432" ignored="false" />
     <file path="/dummy.xml" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384531846398" ignored="false" />
     <file path="/products.js.coffee" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384107137771" ignored="false" />
     <file path="/Dummy.txt" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384465121017" ignored="false" />
@@ -24,7 +24,7 @@
     <file path="/20131113074143_add_user_id_to_products.rb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384378163409" ignored="false" />
     <file path="/routes.rb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384378401569" ignored="false" />
     <file path="/a.dummy" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384444303941" ignored="false" />
-    <file path="/edit.html.erb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384531867763" ignored="false" />
+    <file path="/edit.html.erb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384536050778" ignored="false" />
     <file path="$PROJECT_DIR$/log/development.log" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384443455501" ignored="false" />
     <file path="/sessions_controller.rb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384399150040" ignored="false" />
     <file path="/store_controller.rb" changelist="d5a99b8a-b3b8-4857-a25a-1b64b5eb721e" time="1384532202328" ignored="false" />
@@ -54,10 +54,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="25" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.28455284">
+            <state line="41" column="64" selection-start="1957" selection-end="1957" vertical-scroll-proportion="-2.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="95" selection-start="146" selection-end="146" vertical-scroll-proportion="-1.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="4" selection-start="57" selection-end="93" vertical-scroll-proportion="-2.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="49" selection-start="145" selection-end="145" vertical-scroll-proportion="0.11780105">
               <folding />
             </state>
           </provider>
@@ -67,33 +94,6 @@
         <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="35" selection-start="124" selection-end="124" vertical-scroll-proportion="-1.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="23" selection-start="102" selection-end="102" vertical-scroll-proportion="-1.875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="42" selection-start="753" selection-end="753" vertical-scroll-proportion="-10.291667">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="store_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/store_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="46" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -162,7 +162,6 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" />
         <option value="$PROJECT_DIR$/app/views/products/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/store_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/store/index.html.erb" />
@@ -170,6 +169,7 @@
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
       </list>
     </option>
   </component>
@@ -833,23 +833,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="23" selection-start="64" selection-end="64" vertical-scroll-proportion="0.15706806">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="151" selection-start="240" selection-end="383" vertical-scroll-proportion="-6.25">
           <folding />
         </state>
       </provider>
@@ -871,13 +857,6 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="30" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="23" selection-start="102" selection-end="102" vertical-scroll-proportion="-1.875">
           <folding />
         </state>
       </provider>
@@ -940,7 +919,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="25" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.28455284">
+        <state line="41" column="64" selection-start="1957" selection-end="1957" vertical-scroll-proportion="-2.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="95" selection-start="146" selection-end="146" vertical-scroll-proportion="-1.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="4" selection-start="57" selection-end="93" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="49" selection-start="145" selection-end="145" vertical-scroll-proportion="0.11780105">
           <folding />
         </state>
       </provider>
