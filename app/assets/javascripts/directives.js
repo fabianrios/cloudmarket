@@ -32,10 +32,24 @@ app.factory("Product", [
 ]);
 
 
+app.factory("User", [
+    "$resource", function($resource) {
+        return $resource("/users/:id", {
+            id: "@id"
+        }, {
+            update: {
+                method: "PUT"
+            }
+        });
+    }
+]);
+
+
 
 this.ProductCtrl = [
-    "$scope", "Product", function($scope, Product) {
+    "$scope", "Product", "User",  function($scope, Product, User) {
         $scope.products = Product.query();
+        $scope.users = User.query();
         $scope.orderProp = 'title';
         return $scope.gPlace;
     }

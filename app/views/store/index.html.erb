@@ -1,5 +1,6 @@
 <% content_for :title, "Home - cloudmarket" %>
 
+
 <div class="row">
   <div class="large-8 small-12 columns large-centered">
 
@@ -20,11 +21,6 @@
       </div>
     </form>
 
-  </div>
-</div>
-
-<div class="row">
-  <div class="large-8 small-12 columns large-centered">
     <ul class="no-bullet listado" >
       <li ng-repeat="product in products | filter:query | orderBy:orderProp | filter:lugar" class="{{product.category}}">
         <div class="title-info">
@@ -44,6 +40,8 @@
         </div>
       </li>
     </ul>
+
+
   </div>
 </div>
 
