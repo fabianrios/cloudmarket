@@ -8,4 +8,23 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def check_login
+    unless authorized?
+      redirect_to "/"
+    end
+  end
+
+  def logged_in?
+    if session[:user_id]
+      return true
+    else
+      return false
+    end
+  end
+
+  protected
+  def authorized?
+    logged_in? && (request.get? || current_user.admin?)
+  end
+
 end

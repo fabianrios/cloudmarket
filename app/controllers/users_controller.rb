@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+
+  before_filter :check_login
+
   def index
     @users = User.all
 
