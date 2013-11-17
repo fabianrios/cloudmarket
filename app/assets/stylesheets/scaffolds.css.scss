@@ -88,6 +88,7 @@ h4{
     margin: 0;
     padding: 0;
     color: #5f6269;
+	width: 60%;
     a{
       &.edit{
         color: gray;
@@ -297,24 +298,33 @@ div {
   }
 }
 
+form.custom{
+	margin-top: 20px;
+}
+
 .user_nav{
-	a.button{
-		width: 49%;
+	strong{
+		display: none;
 	}
 }
 
-.movil-user{
+.icon-exit{
+	font-size: 1.4em;
 	position: relative;
-	top: -20px;
+	top: 4px;
 }
 
 @media only screen
 and (min-width : 768px) {
 /* Styles */
 
+
   .user_nav{
     position: relative;
     top: 30px;
+	strong{
+		display: inline;
+	}
 	a.button{
 		width: auto;
 	}
@@ -325,6 +335,10 @@ and (min-width : 768px) {
       display: inline;
       margin-left: 10px;
     }
+  }
+  
+  .pretitle{
+    font-size: 25px;
   }
 
 

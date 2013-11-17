@@ -18,7 +18,6 @@
   	<title><%= content_for?(:title) ? yield(:title) : "CloudMarket" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
-    <link rel="stylesheet" href="http://i.icomoon.io/public/temp/b70ee17e71/UntitledProject1/style.css">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
@@ -29,19 +28,23 @@
 
 
     <div class="row">
-      <div class="large-5 columns">
+      <div class="large-5 small-12 columns">
         <header>
           <h1 class="no-margin"><a href="/"><%= image_tag("logo.png") %> CloudMarket</a></h1>
           <h4 class="subheader no-margin pretitle">Una comunidad para hacer mercado.</h4>
         </header>
       </div>
-      <div class="large-7 columns">
+      <div class="large-7 small-12 columns">
         <div class="user_nav right">
           <% if current_user %>
               <%= link_to  'Personas' ,users_path, :class => "button terciary small radius" %>
               <%= link_to  'Mi Alacena' ,user_products_path(current_user.id), :class => "button terciary small radius" %>
-              <%= link_to image_tag(current_user.picture, :class => 'circle'), user_path(current_user.id), :class => "movil-user" %> <strong class="hide-for-small"><%= current_user.name %> </strong>
-              <%= link_to "Salir", signout_path, id: "sign_out" %>
+              <%= link_to image_tag(current_user.picture, :class => 'circle'), user_path(current_user.id) %> <strong><%= current_user.name %> </strong>
+			 
+              <%= link_to(signout_path, {:id => "sign_out"}) do %>
+				  <span class="icon-exit"></span>
+              <% end %>
+			  
           <% else %>
               <%= link_to "Conectar con Facebook", "/auth/facebook", id: "sign_in", :class => "button round" %>
           <% end %>
