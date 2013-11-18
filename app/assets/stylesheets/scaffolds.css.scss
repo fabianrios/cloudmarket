@@ -32,7 +32,7 @@ header{
     a{
       color: #5f6269;
       letter-spacing: -2px;
-      font-size: 1.2em;
+      font-size: 41px;
       display: block;
       margin-bottom: 5px;
       &:hover{
@@ -52,8 +52,8 @@ h4{
 
 .pretitle{
   line-height: .4;
-  letter-spacing: -1px;
-  font-size: 1.24em;
+  font-size: 18px;
+  padding-left: 4px;
 }
 
 .listado{
@@ -133,6 +133,7 @@ h4{
     &.supermarket{
       background:#ed5f57;
       margin-left: 5px;
+	  display: none;
     }
   }
 }
@@ -317,6 +318,14 @@ form.custom{
 @media only screen
 and (min-width : 768px) {
 /* Styles */
+	
+	.prices {
+		span{
+		    &.supermarket{
+			  display: inline;
+		    }
+		}
+	}
 
 
   .user_nav{
@@ -335,10 +344,6 @@ and (min-width : 768px) {
       display: inline;
       margin-left: 10px;
     }
-  }
-  
-  .pretitle{
-    font-size: 25px;
   }
 
 
