@@ -83,6 +83,22 @@ h4{
 .title-info{
   padding: 5px 10px;
   min-height: 65px;
+  .row{
+	  h4{
+		  width: 100%;
+	  }
+	  .prices{
+		  top: 26px;
+	  }
+  }
+  .switch{
+	  width: 100px;
+	  position: relative;
+	  top: 9px;
+	  label{
+		  font-weight: 200;
+	  }
+  }
   h4{
     font-size: 1.3em;
     margin: 0;
@@ -314,6 +330,8 @@ form.custom{
 	position: relative;
 	top: 4px;
 }
+
+
 
 @media only screen
 and (min-width : 768px) {
