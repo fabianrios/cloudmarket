@@ -14,7 +14,6 @@
           <label for="customDropdown">Orden:</label>
           <select id="customDropdown" ng-model="orderProp" class="form-control">
             <option value="title">Alfabético</option>
-            <option value="price">Económico</option>
             <option value="category">Categoría</option>
           </select>
         </div>
@@ -40,6 +39,10 @@
         </div>
       </li>
     </ul>
+	
+      <% if current_user && current_user.admin? %>
+	  <pre>{{products | json}}</pre>
+	  <% end %>
 
 
   </div>
