@@ -21,7 +21,7 @@
       </div>
     </form>
 
-    <ul class="no-bullet listado" >
+    <ul ui-sortable ng-model="products" class="no-bullet listado" >
       <li ng-repeat="product in products | filter:query | orderBy:orderProp | filter:lugar" class="{{product.category}}">
         <div class="title-info">
           <h4 ng-bind="product.title"></h4>

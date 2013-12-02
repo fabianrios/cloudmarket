@@ -1,4 +1,4 @@
-var app = angular.module("Cloud", ["ngResource"]);
+var app = angular.module("Cloud", ["ngResource", "ui.sortable"]);
 
 app.directive('googleplace', function() {
     return {

@@ -1,6 +1,6 @@
 <% content_for :title, "Nuevo producto - cloudmarket" %>
 
-<% categories = { 'Frutas' => 'Frutas', 'Carnes' => 'Carnes', 'Pescados' => 'Pescados', 'Granos y procesados' => 'Granos y procesados', 'Tuberculos' => 'Tuberculos', 'Hortalizas' => 'Hortalizas', 'Licores' => 'Licores', 'Aseo' => 'Aseo', 'Hogar' => 'Hogar', 'Bebes' => 'bebes', 'Mascotas' => 'Mascotas', 'Vehiculos' => 'Vehiculos' }%>
+<% categories = { 'Frutas' => 'Frutas', 'Carnes' => 'Carnes', 'Pescados' => 'Pescados', 'Granos y procesados' => 'Granos y procesados', 'Tuberculos' => 'Tuberculos', 'Hortalizas' => 'Hortalizas', 'Licores' => 'Licores', 'Aseo' => 'Aseo', 'Hogar' => 'Hogar', 'Bebes' => 'bebes', 'Mascotas' => 'Mascotas', 'Vehiculos' => 'Vehiculos', 'Lacteos' => 'Lacteos' }%>
 <% unidades = { 'Kilo' => 'Kilo', 'Gramos' => 'Gramos', 'Libra' => 'Libra', 'Litro' => 'Litro', 'Docena' => 'Docena', 'Bulto' => 'Bulto', 'Arroba' => 'Arroba', 'Caja' => 'Caja', 'Atado' => 'Atado'  }%>
 
 <%= form_for([@user, @product] , :html => {:class => 'custom'}) do |f| %>

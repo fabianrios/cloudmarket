@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jqueryui
 //= require foundation
 //= require angular
 //= require angular-resource
+//= require sortable
 //= require_tree .
 
 $(document).foundation();
