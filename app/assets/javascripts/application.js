@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jqueryui
+//= require jquery-ui-touch-punch
 //= require foundation
 //= require angular
 //= require angular-resource

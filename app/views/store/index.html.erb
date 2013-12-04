@@ -5,10 +5,10 @@
   <div class="large-8 small-12 columns large-centered">
 
     <form class="custom">
-      <input type="search" class="large" placeholder="Escribe el producto que estas buscando" ng-model="query">
+      <input type="search" class="large" placeholder="¿Qué producto buscas?" ng-model="query">
       <div class="row">
         <div class="large-6 columns">
-          <input type="search" class="large" placeholder="Donde" ng-model="lugar">
+          <input type="search" class="large" placeholder="¿Dónde?" ng-model="lugar">
         </div>
         <div class="large-6 columns">
           <label for="customDropdown">Orden:</label>
@@ -23,7 +23,7 @@
     <ul ui-sortable ng-model="products" class="no-bullet listado" >
       <li ng-repeat="product in products | filter:query | orderBy:orderProp | filter:lugar" class="{{product.category}}">
         <div class="title-info">
-          <h4 ng-bind="product.title"></h4>
+          <h4>{{product.title}} <a href="#" title="añadir a mi alacena"><span class="icon-copy"></span> <span class="add-word">Agregar</span> </a></h4>
           <h6 class="subheader"><small>{{ product.updated_at | date:'MMMM dd, yyyy' }}</small></h6>
           <div class="prices">
             <span class="market" ng-bind="product.price | currency:'$'"></span>
