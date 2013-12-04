@@ -770,7 +770,7 @@
 // $reveal-overlay-bg-old: #000;
 
 // We use these to control the style of the modal itself.
-// $reveal-modal-bg: #fff;
+	$reveal-modal-bg: rgb(190, 190, 190);
 // $reveal-position-top: 50px;
 // $reveal-default-width: 80%;
 // $reveal-modal-padding: emCalc(20px);
@@ -1018,4 +1018,7 @@
   @include button-style(rgba(255,255,255,.2), 3px, false);
   color: #4D4F57;
 }
-
+//
+//.face{
+//	@include button($padding:1em, $bg:#2E428B, $radius:10px, $full-width:true);
+//}

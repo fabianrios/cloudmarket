@@ -23,7 +23,7 @@
     <ul ui-sortable ng-model="products" class="no-bullet listado" >
       <li ng-repeat="product in products | filter:query | orderBy:orderProp | filter:lugar" class="{{product.category}}">
         <div class="title-info">
-          <h4>{{product.title}} <a href="#" title="añadir a mi alacena"><span class="icon-copy"></span> <span class="add-word">Agregar</span> </a></h4>
+          <h4>{{product.title}} <a href="#" data title="añadir a mi alacena" data-reveal-id="clone"><span class="icon-copy"></span> <span class="add-word">Agregar</span> </a></h4>
           <h6 class="subheader"><small>{{ product.updated_at | date:'MMMM dd, yyyy' }}</small></h6>
           <div class="prices">
             <span class="market" ng-bind="product.price | currency:'$'"></span>
@@ -44,7 +44,21 @@
 	  <pre>{{products | json}}</pre>
 	  <% end %>
 
-
+	  <div id="clone" class="reveal-modal">
+	    <h3 class="subheader">Guardalo en tu alacena</h3>
+	    <form action="#">
+			<div class="row">
+			      <div class="large-12 columns">
+				    <label>Dónde:</label>
+				    <input type="text" placeholder="escribe el lugar">
+				    <label>Precio:</label>
+				    <input type="number" placeholder="precio del producto">
+				</div>
+			</div>
+	    </form>
+		<input type="text" class="button success" value="Guardar"/>
+	    <a class="close-reveal-modal">&#215;</a>
+	  </div>
   </div>
 </div>
 
