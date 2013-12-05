@@ -1,1 +1,1 @@
-var CMJS = angular.module( 'cmjs', ["ngResource", "ui.sortable"] );
+var CMJS = angular.module( 'Cloud', ["ngResource", "ui.sortable"] );
