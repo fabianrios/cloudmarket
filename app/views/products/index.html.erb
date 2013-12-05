@@ -13,31 +13,33 @@
                 <div class="title-info">
 					<div class="row">
 						<div class="large-6 columns">
-		                    <h4>
-		                      <%= product.title %>
-		                      <% if !product.blank? %>
-		                          <% if current_user.id == product.user_id %>
-		                              <%= link_to(edit_user_product_path(@user, product), :class=>"edit") do %>
-		                                  <span class="icon-pencil"></span>
-		                              <% end %>
-		                              <%= link_to([@user, product], :class=>"delete", :confirm => 'Estas seguro de querer borrarlo?', :method => :delete) do %>
-		                                  <span class="icon-remove"></span>
-		                              <% end %>
-		                          <% end %>
-		                      <% end %>
-		                      </h4>
-		  					<div class="switch small round">
-		  					  <input id="<%= product.id %>" name="switch-<%= product.id %>" type="radio">
-		  					  <label for="<%= product.id %>" onclick="">Comprar</label>
-		  					  <input id="z-<%= product.id %>" name="switch-<%= product.id %>" type="radio" checked>
-		  					  <label for="z-<%= product.id %>" onclick="">LLeno</label>
-		  					  <span></span>
-		  					</div>
+							<h4>
+								<%= product.title %>
+									<% if !product.blank? %>
+										<% if current_user.id == product.user_id %>
+											<%= link_to(edit_user_product_path(@user, product), :class=>"edit") do %>
+											<span class="icon-pencil"></span>
+										<% end %>
+											<%= link_to([@user, product], :class=>"delete", :confirm => 'Estas seguro de querer borrarlo?', :method => :delete) do %>
+											<span class="icon-remove"></span>
+										<% end %>
+									<% end %>
+								<% end %>
+							</h4>
+							<% if current_user.id == product.user_id %>
+								<div class="switch small round">
+									<input id="<%= product.id %>" name="switch-<%= product.id %>" type="radio">
+									<label for="<%= product.id %>" onclick="">Comprar</label>
+									<input id="z-<%= product.id %>" name="switch-<%= product.id %>" type="radio" checked>
+									<label for="z-<%= product.id %>" onclick="">Tengo</label>
+									<span></span>
+								</div>
+							<% end %>
 						</div>
 						<div class="large-6 columns">
-		                    <div class="prices">
-		                      <span class="market"><%= number_to_currency(product.price) %></span>
-		                    </div>
+							<div class="prices">
+								<span class="market"><%= number_to_currency(product.price) %></span>
+							</div>
 						</div>
 					</div>
                 </div>

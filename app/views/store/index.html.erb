@@ -37,30 +37,30 @@
             <small ng-bind="product.adress"></small>
           </div>
         </div>
+		<!-- modal -->
+		<div id="clone" class="reveal-modal">
+			<h3 class="subheader">Guardalo en tu alacena</h3>
+			<form action="#">
+				<div class="row">
+					<div class="large-9 columns">
+						<label>Dónde:</label>
+						<input type="text" placeholder="Escribe el lugar" value="{{product.storeName}}">
+					</div>
+					<div class="large-3 columns">
+						<label>Precio:</label>
+						<input type="number" value="{{product.price}}">
+					</div>
+				</div>
+				<input type="text" class="button success" value="Guardar"/>
+			</form>
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
       </li>
     </ul>
 	
       <% if current_user && current_user.admin? %>
 	  <pre>{{products | json}}</pre>
 	  <% end %>
-
-	  <div id="clone" class="reveal-modal">
-	    <h3 class="subheader">Guardalo en tu alacena</h3>
-	    <form action="#">
-			<div class="row">
-				<div class="large-9 columns">
-					  <label>Dónde:</label>
-					<input type="text" placeholder="Escribe el lugar">
-				</div>
-				<div class="large-3 columns">
-				    <label>Precio:</label>
-				    <input type="number">
-				</div>
-			</div>
-			<input type="text" class="button success" value="Guardar"/>
-	    </form>
-	    <a class="close-reveal-modal">&#215;</a>
-	  </div>
   </div>
 </div>
 

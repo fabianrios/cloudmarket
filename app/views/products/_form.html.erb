@@ -18,15 +18,15 @@
     <div class="row">
       <div class="large-8 columns">
         <div class="field">
-          <label>Ubicación:</label>
-          <input type="text" ng-model="lugar" googleplace/>
-        </div>
-        <div class="field">
-          <%= f.label :title, 'Nombre' %>
+          <%= f.label :title, 'Nombre:' %>
           <%= f.text_field :title %>
         </div>
         <div class="field">
-          <%= f.label :storeName, 'Nombre del lugar' %>
+          <label>Nombre del lugar:</label>
+          <input type="text" ng-model="lugar" googleplace/>
+        </div>
+        <div class="field">
+          <%= f.label :storeName, 'Nombre corto del lugar' %>
           <%= f.text_field :storeName %>
         </div>
         <%= f.text_field :adress, "ng-model" => "lugar", :class => "hide" %>
