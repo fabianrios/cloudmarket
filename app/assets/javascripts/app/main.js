@@ -1,0 +1,1 @@
+var CMJS = angular.module( 'cmjs', ["ngResource", "ui.sortable"] );

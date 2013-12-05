@@ -17,4 +17,22 @@
 .sass-cache
 .idea
 
+#Added to the default configuration
+*.log
+tmp/**/*
+tmp/*
+doc/api
+doc/app
+/.idea
+.idea
+/.idea/*
+.idea/*
+*.swp
+.DS_Store
+public/uploads/*
+config/database.yml
+.sass-cache/*
+/tmp/cache/sass
+/tmp/cache/sass/*
+tmp/*
 
