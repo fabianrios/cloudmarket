@@ -1,0 +1,1 @@
+var CMJS = angular.module( 'Cloud', ["ngResource", "ui.sortable"] );

@@ -18,6 +18,9 @@
 //= require angular
 //= require angular-resource
 //= require sortable
-//= require_tree .
-
+//= require app/main
+//= require_tree ./app/directives/
+//= require_tree ./app/factories/
+//= require_tree ./app/controllers/
+//= require_tree ./app/config/
 $(document).foundation();
