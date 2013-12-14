@@ -356,13 +356,15 @@ form.custom{
 
 .user_nav{
 	a.button{
-		width: 100%;
-		text-indent: 15px;
-		span{
-			font-size: 26px;
-			position: absolute;
-			left: -7px;
-			top: 8px;
+		&.face{
+			width: 100%;
+			text-indent: 15px;
+			span{
+				font-size: 26px;
+				position: absolute;
+				left: -7px;
+				top: 8px;
+			}
 		}
 	}
 	strong{
@@ -414,6 +416,9 @@ and (min-width : 768px) {
 		display: inline;
 	}
 	a.button{
+		&.face{
+			width: auto;
+		}
 		width: auto;
 	}
   }
