@@ -53,7 +53,9 @@
               <% end %>
 			  
           <% else %>
-              <%= link_to "Conectar con Facebook", "/auth/facebook", id: "sign_in", :class => "button round face" %>
+              <%= link_to("/auth/facebook", {:id => "sign_in", :class => "button round face"}) do %>
+				  <span class="icon-facebook"></span> Conectar con Facebook
+              <% end %>
           <% end %>
         </div>
       </div>

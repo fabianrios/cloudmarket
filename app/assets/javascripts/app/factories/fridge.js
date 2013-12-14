@@ -7,7 +7,10 @@ CMJS.factory("Fridge", [
         }, {
             update: {
                 method: "PUT"
-            }
+            },
+			create: {
+				method: "POST"
+			}
         });
     }
 ]);

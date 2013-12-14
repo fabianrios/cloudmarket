@@ -22,14 +22,14 @@
     </form>
 
     <% if !@user.products.empty? %>
-	<ul class="no-bullet listado">
+	<ul class="no-bullet listado" ui-sortable="sortableOptions" ng-model="products">
 		<li ng-repeat="fridge in fridges | filter:query | orderBy:orderProp" class="{{fridge.category}}" id="{{fridge.user_id}}">
 			<div class="title-info">
 				<div class="row">
 					<div class="large-6 columns">
 						<h4>
-							{{fridge.title}}
-							<% if current_user.id == @user.id %>
+							<span class="handle icon-list"></span> {{fridge.title}}
+							<% if current_user && current_user.id == @user.id %>
 							<a href="/users/{{fridge.user_id}}/products/{{fridge.id}}/edit" class="edit">
 								<span class="icon-pencil"></span>
 							</a>
