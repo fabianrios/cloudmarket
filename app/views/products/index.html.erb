@@ -5,54 +5,61 @@
 
     <h3 class="subheader">Alacena de <%= image_tag @user.picture, :class => 'circle' %> <%= @user.name %></h3>
     <hr>
+	
+    <form class="custom">
+      <div class="row">
+        <div class="large-6 columns">
+			<input type="search" class="large" placeholder="¿Qué producto buscas?" ng-model="query">
+        </div>
+        <div class="large-6 columns">
+          <label for="customDropdown">Orden:</label>
+          <select id="customDropdown" ng-model="orderProp" class="form-control">
+            <option value="title">Alfabético</option>
+            <option value="category">Categoría</option>
+          </select>
+        </div>
+      </div>
+    </form>
 
     <% if !@user.products.empty? %>
-        <ul class="no-bullet listado" >
-          <% for product in @products %>
-              <li class="<%= product.category %>">
-                <div class="title-info">
-					<div class="row">
-						<div class="large-6 columns">
-							<h4>
-								<%= product.title %>
-									<% if !product.blank? %>
-										<% if current_user.id == product.user_id %>
-											<%= link_to(edit_user_product_path(@user, product), :class=>"edit") do %>
-											<span class="icon-pencil"></span>
-										<% end %>
-											<%= link_to([@user, product], :class=>"delete", :confirm => 'Estas seguro de querer borrarlo?', :method => :delete) do %>
-											<span class="icon-remove"></span>
-										<% end %>
-									<% end %>
-								<% end %>
-							</h4>
-							<% if current_user.id == product.user_id %>
-								<div class="switch small round">
-									<input id="<%= product.id %>" name="switch-<%= product.id %>" type="radio">
-									<label for="<%= product.id %>" onclick="">Comprar</label>
-									<input id="z-<%= product.id %>" name="switch-<%= product.id %>" type="radio" checked>
-									<label for="z-<%= product.id %>" onclick="">Tengo</label>
-									<span></span>
-								</div>
+	<ul class="no-bullet listado">
+		<li ng-repeat="fridge in fridges | filter:query | orderBy:orderProp" class="{{fridge.category}}" id="{{fridge.user_id}}">
+			<div class="title-info">
+				<div class="row">
+					<div class="large-6 columns">
+						<h4>
+							{{fridge.title}}
+							<% if current_user.id == @user.id %>
+							<a href="/users/{{fridge.user_id}}/products/{{fridge.id}}/edit" class="edit">
+								<span class="icon-pencil"></span>
+							</a>
+							<a href="/users/{{fridge.user_id}}/products/{{fridge.id}}" class="delete" data-confirm="Estas seguro de querer borrarlo?" data-method="delete" rel="nofollow">
+								<span class="icon-remove"></span>
+							</a>
 							<% end %>
-						</div>
-						<div class="large-6 columns">
-							<div class="prices">
-								<span class="market"><%= number_to_currency(product.price) %></span>
-							</div>
+						</h4>
+						<% if current_user.id == @user.id %>
+							<form action="#" class="custom-set" ng-show="fridge.available">
+								<label for="checkbox{{$index}}"><input type="checkbox" id="checkbox{{$index}}"> Comprar</label>
+							</form>
+						<% end %>
+					</div>
+					<div class="large-6 columns">
+						<div class="prices">
+							<span class="market">{{fridge.price | currency:'$'}}</span>
 						</div>
 					</div>
-                </div>
-                <div class="more-info">
-                    <span class="left"><strong><%= product.quantity %></strong> Unid. x <strong><%= product.unit %></strong></span> <span class="the-category <%= product.category %>"><%= product.category %></span>
-                    <div class="text-center place">
-                      <strong><%= product.storeName %></strong>
-                      <small><%= product.adress %></small>
-                    </div>
-                </div>
-              </li>
-          <% end %>
-        </ul>
+				</div><!-- /row -->
+			</div>
+			<div class="more-info">
+				<span class="left"><strong ng-bind="fridge.quantity"></strong> Unid. x <strong ng-bind="fridge.unit"></strong></span> <span class="the-category {{fridge.category}}" ng-bind="fridge.category"></span>
+				<div class="text-center place">
+					<strong ng-bind="fridge.storeName"></strong>
+					<small ng-bind="fridge.adress"></small>
+				</div>
+			</div>	
+		</li>
+	</ul>
     <% else %>
         <div data-alert class="alert-box secondary"><%= @user.name %> No has creado ningun producto.<a href="#" class="close">&times;</a></div>
     <% end %>
@@ -64,5 +71,8 @@
    </div>
 </div>
 
+<% if current_user && current_user.admin? %>
+<pre>{{products | json}}</pre>
+<% end %>
 
 

@@ -16,6 +16,7 @@
 /tmp
 .sass-cache
 .idea
+.idea/*
 
 #Added to the default configuration
 *.log

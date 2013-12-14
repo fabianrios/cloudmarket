@@ -3,7 +3,7 @@
 <% categories = { 'Frutas' => 'Frutas', 'Carnes' => 'Carnes', 'Pescados' => 'Pescados', 'Granos y procesados' => 'Granos y procesados', 'Tuberculos' => 'Tuberculos', 'Hortalizas' => 'Hortalizas', 'Licores' => 'Licores', 'Aseo' => 'Aseo', 'Hogar' => 'Hogar', 'Bebes' => 'bebes', 'Mascotas' => 'Mascotas', 'Vehiculos' => 'Vehiculos', 'Lacteos' => 'Lacteos' }%>
 <% unidades = { 'Kilo' => 'Kilo', 'Gramos' => 'Gramos', 'Libra' => 'Libra', 'Litro' => 'Litro', 'Docena' => 'Docena', 'Bulto' => 'Bulto', 'Arroba' => 'Arroba', 'Caja' => 'Caja', 'Atado' => 'Atado'  }%>
 
-<%= form_for([@user, @product] , :html => {:class => 'custom'}) do |f| %>
+<%= form_for([@user, @product] , :html => {:class => 'custom-set'}) do |f| %>
     <% if @product.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -32,10 +32,20 @@
         <%= f.text_field :adress, "ng-model" => "lugar", :class => "hide" %>
       </div>
       <div class="large-4 columns">
-        <div class="field">
-          <%= f.label :price, 'Precio' %>
-          <%= f.text_field :price%>
-        </div>
+       <div class="row">
+		   <div class="large-6 columns">
+			<div class="field">
+	       	  <%= f.label :price, 'Precio' %>
+	       	  <%= f.text_field :price%>
+		  	</div>
+		</div>
+		<div class="large-6 columns">
+			<div class="field">
+			  <%= f.label :quantity, 'Cantidad' %>
+			  <%= f.number_field :quantity %>
+			</div>
+		</div>
+       </div>
         <% if current_user && current_user.admin? %>
         <div class="field">
           <%= f.label :highprice, 'Precio promedio' %>
@@ -43,13 +53,13 @@
         </div>
         <% end %>
         <div class="field">
+          <%= f.label :available, '¿Comprar?' %>
+          <%= f.check_box :available %>
+        </div>
+        <div class="field">
           <%= f.label :category, 'Categoría' %>
           <% list = categories.sort %>
           <%= f.select :category, list %>
-        </div>
-        <div class="field">
-          <%= f.label :quantity, 'Cantidad' %>
-          <%= f.number_field :quantity %>
         </div>
         <div class="field">
           <%= f.label :unit, 'Presentación' %>

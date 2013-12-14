@@ -17,10 +17,10 @@
 //= require foundation
 //= require angular
 //= require angular-resource
+//= require angular-route
 //= require sortable
 //= require app/main
 //= require_tree ./app/directives/
 //= require_tree ./app/factories/
 //= require_tree ./app/controllers/
-//= require_tree ./app/config/
 $(document).foundation();
