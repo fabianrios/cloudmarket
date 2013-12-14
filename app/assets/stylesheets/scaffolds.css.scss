@@ -123,13 +123,15 @@ h4{
     margin: 0;
     padding: 0;
     color: #5f6269;
-	width: 70%;
+	width: 100%;
 	span{
 		&.handle{
-			font-size: 75%;
+			font-size: 100%;
 			position: relative;
-			top: -1px;	
-			cursor:move;
+			top: 0px;
+			cursor: move;
+			padding-right: 5px;
+			padding-left: 1px;
 		}
 		&.add-word{
 			font-size: 14px;
@@ -166,6 +168,9 @@ h4{
   @include border-bottom-radius(5px);
   span{
     font-size: 16px;
+  }
+  strong{
+	  margin-left: 5px;
   }
 }
 
@@ -402,6 +407,12 @@ and (min-width : 768px) {
 	
 	.title-info{
 		h4{
+			width: 70%;
+			span.handle{
+				font-size: 80%;
+				padding: 0;
+				top: -1px;
+			}
 			span.add-word{
 				display: inline;
 			}

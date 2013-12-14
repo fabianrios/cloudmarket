@@ -52,7 +52,7 @@
 				</div><!-- /row -->
 			</div>
 			<div class="more-info">
-				<span class="left"><strong ng-bind="fridge.quantity"></strong> Unid. x <strong ng-bind="fridge.unit"></strong></span> <span class="the-category {{fridge.category}}" ng-bind="fridge.category"></span>
+				<span class="left"><strong ng-bind="fridge.quantity"></strong><strong ng-bind="fridge.unit"></strong> </span> <span class="the-category {{fridge.category}}" ng-bind="fridge.category"></span>
 				<div class="text-center place">
 					<strong ng-bind="fridge.storeName"></strong>
 					<small ng-bind="fridge.adress"></small>
@@ -72,7 +72,7 @@
 </div>
 
 <% if current_user && current_user.admin? %>
-<pre>{{products | json}}</pre>
+<!-- <pre>{{products | json}}</pre> -->
 <% end %>
 
 

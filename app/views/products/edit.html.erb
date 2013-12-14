@@ -2,8 +2,8 @@
   <div class="large-12 columns">
     <h1 class="subheader">Nuevo Producto <small>en la Alacena de <%= @user.name %></small></h1>
 
-    <%= render 'form' %>
+    <%= render 'form_edit' %>
 
-    <%= link_to 'Volver', user_product_path %>
+    <%= link_to 'Volver', user_products_path(@user), :class => 'button terciary' %>
    </div>
 </div>
