@@ -1,16 +1,18 @@
 <% content_for :title, "Home - cloudmarket" %>
-
+<!-- para que coja las posibles unidades en el formulario -->
+<% unidades = { 'Kilo' => 'Kilo', 'Gramos' => 'Gramos', 'Libra' => 'Libra', 'Litro' => 'Litro', 'Docena' => 'Docena', 'Bulto' => 'Bulto', 'Arroba' => 'Arroba', 'Caja' => 'Caja', 'Atado' => 'Atado'  }%>
 
 <div class="row">
   <div class="large-8 small-12 columns large-centered">
+	   
 
     <form class="custom">
       <input type="search" class="large" placeholder="¿Qué producto buscas?" ng-model="query">
       <div class="row">
-        <div class="large-6 columns">
+        <div class="large-9 columns">
           <input type="search" class="large" placeholder="¿Dónde?" ng-model="lugar">
         </div>
-        <div class="large-6 columns">
+        <div class="large-3 columns">
           <label for="customDropdown">Orden:</label>
           <select id="customDropdown" ng-model="orderProp" class="form-control">
             <option value="title">Alfabético</option>
@@ -20,12 +22,15 @@
       </div>
     </form>
 
+    <%= content_tag(:div, raw(notice+'<a href="#" class="close">&times;</a>'), class: 'alert-box success', 'data-alert' => '') if notice %>
+    <%= content_tag(:div, alert,  class: 'alert-box alert', 'data-alert' => '' ) if alert  %>
+	
     <ul ui-sortable="sortableOptions" ng-model="products" class="no-bullet listado" >
       <li ng-repeat="product in products | filter:query | orderBy:orderProp | filter:lugar" class="{{product.category}}">
         <div class="title-info">
           <h4> <span class="handle icon-list"></span> {{product.title}} 
 			  <% if current_user && current_user.id %>
-			  	<a href="#" data title="añadir a mi alacena" data-reveal-id="clone"><span class="icon-copy"></span> <span class="add-word">Agregar</span> </a>
+			  	<a href="#" data title="añadir a mi alacena" data-reveal-id="clone-{{$index}}"><span class="icon-copy"></span> <span class="add-word">Agregar</span> </a>
 			  <% end %>
 		  </h4>
           <h6 class="subheader"><small>{{ product.updated_at | date:'MMMM dd, yyyy' }}</small></h6>
@@ -42,29 +47,65 @@
           </div>
         </div>
 		<!-- modal -->
-		<div id="clone" class="reveal-modal">
+		<div id="clone-{{$index}}" class="reveal-modal" data-number="{{product.id}}" >
 			<h3 class="subheader">Guardalo en tu alacena</h3>
-			<form action="#">
+			<%= form_for([@user, @product] , :html => {:class => 'custom'}) do |f| %>
+			    <% if @product.errors.any? %>
+			        <div id="error_explanation">
+			          <h2><%= pluralize(@product.errors.count, "error") %> No dejaron crear este producto:</h2>
+					  <br />
+			          <ul class="no-bullet">
+			            <% @product.errors.full_messages.each do |msg| %>
+			                <li><%= msg %></li>
+			            <% end %>
+			          </ul>
+			        </div>
+			    <% end %>
 				<div class="row">
 					<div class="large-9 columns">
-						<label>Dónde:</label>
-						<input type="text" placeholder="Escribe el lugar" value="{{product.storeName}}">
+						<div class="field">
+						  <label>Nombre del lugar:<span class="redtxt">*</span></label>
+						  <input type="text" ng-model="lugar" googleplace/>
+						  <%= f.text_field :adress, "ng-model" => "lugar", :class => "hide" %>
+						</div>
 					</div>
 					<div class="large-3 columns">
-						<label>Precio:</label>
-						<input type="number" value="{{product.price}}">
+			  			<div class="field">
+			  	       	  <%= f.label :price, raw('Precio: <span class="redtxt">*</span>') %>
+			  	       	  <%= f.number_field :price, value: "{{product.price}}" %>
+			  		  	</div>
 					</div>
 				</div>
-				<input type="submit" class="button success" value="Guardar"/>
-			</form>
+				<hr />
+				<div class="row">
+					<div class="large-5 columns">
+						<div class="field">
+						  <%= f.label :title, raw('Nombre del producto: <span class="redtxt">*</span>') %>
+						  <%= f.text_field :title, :placeholder => "Nombre del producto, ej: Tomates", value: "{{product.title}}"  %>
+						</div>
+					</div>
+					<div class="large-3 columns">
+						<div class="field">
+							<%= f.label :quantity, raw('Cantidad: <span class="redtxt">*</span>') %>
+							<%= f.number_field :quantity, value: "{{product.quantity}}" %>
+						</div>
+					</div>
+					<div class="large-4 columns">
+						<div class="field">
+							<%= f.label :unit, raw('Presentación: <span class="redtxt">*</span>') %>
+							<% lista = unidades.sort %>
+							<%= f.select :unit, lista, :selected => @product.unit %>
+						</div>
+					</div>
+				</div>
+				<%= f.submit "Guardar", class: 'button success full' %>
+			<% end %>
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
       </li>
     </ul>
 	
-      <% if current_user && current_user.admin? %>
-	  <!-- <pre>{{products | json}}</pre> -->
-	  <% end %>
+	
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-<% content_for :title, "Nuevo producto - cloudmarket" %>
+<% content_for :title, "Editar producto - cloudmarket" %>
 
 <% categories = { 'Frutas' => 'Frutas', 'Carnes' => 'Carnes', 'Pescados' => 'Pescados', 'Granos y procesados' => 'Granos y procesados', 'Tuberculos' => 'Tuberculos', 'Hortalizas' => 'Hortalizas', 'Licores' => 'Licores', 'Aseo' => 'Aseo', 'Hogar' => 'Hogar', 'Bebes' => 'bebes', 'Mascotas' => 'Mascotas', 'Vehiculos' => 'Vehiculos', 'Lacteos' => 'Lacteos' }%>
 <% unidades = { 'Kilo' => 'Kilo', 'Gramos' => 'Gramos', 'Libra' => 'Libra', 'Litro' => 'Litro', 'Docena' => 'Docena', 'Bulto' => 'Bulto', 'Arroba' => 'Arroba', 'Caja' => 'Caja', 'Atado' => 'Atado'  }%>
@@ -6,9 +6,9 @@
 <%= form_for([@user, @product] , :html => {:class => 'custom-set'}) do |f| %>
     <% if @product.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-          <ul>
+          <h2><%= pluralize(@product.errors.count, "error") %> No dejaron editar este producto:</h2>
+		  <br />
+          <ul class="no-bullet">
             <% @product.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
@@ -17,10 +17,20 @@
     <% end %>
     <div class="row">
       <div class="large-8 columns">
-        <div class="field">
-          <%= f.label :title, 'Nombre:' %>
-          <%= f.text_field :title %>
-        </div>
+		<div class="row">
+			<div class="large-8 columns">
+					<div class="field">
+					<%= f.label :title, raw('Nombre del producto: <span class="redtxt">*</span>') %>
+					<%= f.text_field :title, :placeholder => "Nombre del producto, ej: Tomates"  %>
+					</div>
+			</div>
+			<div class="large-4 columns">
+				<div class="field">
+					<%= f.label :price, raw('Precio: <span class="redtxt">*</span>') %>
+					<%= f.number_field :price%>
+				</div>
+			</div>
+		</div>
         <div class="field">
           <%= f.label :storeName, 'Nombre corto del lugar' %>
           <%= f.text_field :storeName %>
@@ -29,19 +39,21 @@
       </div>
       <div class="large-4 columns">
        <div class="row">
-		   <div class="large-6 columns">
+		   <div class="large-7 columns">
 			<div class="field">
-	       	  <%= f.label :price, 'Precio' %>
-	       	  <%= f.text_field :price%>
-		  	</div>
+				<%= f.label :quantity, raw('Cantidad: <span class="redtxt">*</span>') %>
+				<%= f.number_field :quantity, value: 1 %>
+			</div>
 		</div>
-		<div class="large-6 columns">
+		<div class="large-5 columns">
 			<div class="field">
-			  <%= f.label :quantity, 'Cantidad' %>
-			  <%= f.number_field :quantity %>
+				<%= f.label :unit, raw('Presentación: <span class="redtxt">*</span>') %>
+				<% lista = unidades.sort %>
+				<%= f.select :unit, lista %>
 			</div>
 		</div>
        </div>
+	   <br />
         <% if current_user && current_user.admin? %>
         <div class="field">
           <%= f.label :highprice, 'Precio promedio' %>
@@ -57,19 +69,10 @@
           <% list = categories.sort %>
           <%= f.select :category, list %>
         </div>
-        <div class="field">
-          <%= f.label :unit, 'Presentación' %>
-          <% lista = unidades.sort %>
-          <%= f.select :unit, lista %>
-        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="actions">
-          <%= f.submit "Continuar", class: 'button success right' %>
-        </div>
-      </div>
+    <div class="actions">
+      <%= f.submit "Guardar", class: 'button success right' %>
     </div>
 <% end %>
 

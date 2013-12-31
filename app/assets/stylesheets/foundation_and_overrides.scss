@@ -28,13 +28,13 @@
 // $text-direction: ltr;
 
 // We use these as default colors throughout
-  $primary-color: #35bc54;
+	$primary-color: #3ACA78;
 // $secondary-color: #e9e9e9;
    $alert-color: rgba(255,0,0,.7);
    $success-color: #4ed76e;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+	$global-radius: 4px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -595,7 +595,7 @@
 //
 
 // We use these to style the labels
-// $label-padding: emCalc(3px) emCalc(10px) emCalc(4px);
+	$label-padding: emCalc(3px) emCalc(8px) emCalc(4px);
 // $label-radius: $global-radius;
 
 // We use these to style the label text
@@ -890,7 +890,7 @@
 // $switch-paddle-transition-speed: .1s;
 // $switch-paddle-transition-ease: ease-out;
 	$switch-positive-color: $secondary-color;
-	 $switch-negative-color: rgba($success-color, .6);
+	$switch-negative-color: rgba($success-color, .6);
 
 // Outline Style for tabbing through switches
 // $switch-label-outline: 1px dotted #888;

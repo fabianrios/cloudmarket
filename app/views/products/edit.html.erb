@@ -1,9 +1,11 @@
 <div class="row">
   <div class="large-12 columns">
-    <h1 class="subheader">Nuevo Producto <small>en la Alacena de <%= @user.name %></small></h1>
+    <h1 class="subheader">Editar Producto <small>en la Alacena de <%= @user.name %></small></h1>
 
     <%= render 'form_edit' %>
 
-    <%= link_to 'Volver', user_products_path(@user), :class => 'button terciary' %>
+   <div class="back">
+	    <%= link_to 'Volver', user_products_path(@user), :class => 'button terciary left' %>
+	</div>
    </div>
 </div>

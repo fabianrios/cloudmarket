@@ -15,6 +15,23 @@ input.hide{
   margin: 0;
 }
 
+.graytxt{
+	color: #5f6269;
+}
+
+.redtxt{
+	color: #F6443F;
+}
+
+.full{
+	width: 100%;
+}
+
+.back{ //para corregir los botones de volver que queden al lado de guardar o editar en los formularios
+	position: relative;
+	top: -13px;
+}
+
 .place{
   border-top: 1px solid rgba(50,50,50,.1);
   margin: 0 auto;
@@ -86,6 +103,9 @@ h4{
   &.ui-state-highlight{
 	  background: rgba(255,255,255,.3);
 	  border: 1px dashed rgba(50, 50, 50, 0.3);
+	  &:first-child{
+		  @include box-shadow(0 0 0 0);
+	  }
   }
 }
 
@@ -320,22 +340,23 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: rgba(255,0,0,.7);
-  display: table;
   label{
     color: #ffffff;
     width: 100%;
     @include border-top-radius(5px);
   }
+  input{
+	  border: 1px solid rgba(255,0,0,.7);
+  }
 }
 
 #error_explanation {
-  width: 450px;
+  width: 100%;
   border: 2px solid rgba(255,0,0,.7);
   padding: 7px;
   padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+  margin-bottom: 30px;
+  background-color: rgba(255,255,255,.7);
   h2 {
     text-align: left;
     font-weight: bold;

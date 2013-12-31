@@ -11,7 +11,9 @@
         <div data-alert class="alert-box alert">No puedes crear productos en la alacena de <%= @user.name %><a href="#" class="close">&times;</a></div>
 
     <% end %>
-    <%= link_to 'Volver', user_products_path(@user), :class => 'button terciary' %>
+	<div class="back">
+		<%= link_to 'Volver', user_products_path(@user), :class => 'button terciary left' %>
+	</div>
   </div>
 </div>
 
