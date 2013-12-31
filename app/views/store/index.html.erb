@@ -118,6 +118,17 @@
 		</h3>
 	</div>
 	
+	<div ng-show="(products | filter:lugar).length == 0">
+		<h2 class="subheader text-center">No encontramos el lugar <strong>{{lugar}}</strong></h2>
+		<h3 class="subheader text-center">Se el primero en 
+		<% if current_user %>
+			<small><%= link_to 'crear este lugar', new_user_product_path(@user), :class => "button success radius text-center" %></small>
+		<% else %>
+			<small><%= link_to("/auth/facebook", {:id => "sign_in", :class => "button success radius text-center"}) do %>crear este lugar<% end %></small>
+		<% end %>
+		</h3>
+	</div>
+	
   </div>
 </div>
 
