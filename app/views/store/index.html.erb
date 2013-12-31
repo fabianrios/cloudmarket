@@ -25,6 +25,7 @@
     <%= content_tag(:div, raw(notice+'<a href="#" class="close">&times;</a>'), class: 'alert-box success', 'data-alert' => '') if notice %>
     <%= content_tag(:div, alert,  class: 'alert-box alert', 'data-alert' => '' ) if alert  %>
 	
+	
     <ul ui-sortable="sortableOptions" ng-model="products" class="no-bullet listado" >
       <li ng-repeat="product in products | filter:query | orderBy:orderProp | filter:lugar" class="{{product.category}}">
         <div class="title-info">
@@ -47,7 +48,8 @@
           </div>
         </div>
 		<!-- modal -->
-		<div id="clone-{{$index}}" class="reveal-modal" data-number="{{product.id}}" >
+		<% if current_user %>
+		<div id="clone-{{$index}}" class="reveal-modal" data-number="{{product.id}}">
 			<h3 class="subheader">Guardalo en tu alacena</h3>
 			<%= form_for([@user, @product] , :html => {:class => 'custom'}) do |f| %>
 			    <% if @product.errors.any? %>
@@ -102,6 +104,7 @@
 			<% end %>
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
+		<% end %>
       </li>
     </ul>
 	

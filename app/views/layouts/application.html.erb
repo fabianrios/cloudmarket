@@ -61,11 +61,25 @@
       </div>
     </div>
     <%= yield %>
+	<div class="row social-buttons">
+		<div class="large-8 columns text-center large-centered small-centered">
+			<!-- AddThis Button BEGIN -->
+			<span class='st_facebook_large' displayText='Facebook'></span>
+			<span class='st_linkedin_large' displayText='LinkedIn'></span>
+			<span class='st_twitter_large' displayText='Tweet'></span>
+			<span class='st_googleplus_large' displayText='Google +'></span>
+			<span class='st_pinterest_large' displayText='Pinterest'></span>
+		</div>
+	</div>
+	<br />
     <footer>
       <p class="text-center"><small>&copy; 2013 <a href="http://fabianrios.co" targe="_blank"> Fabián Ríos</a></small></p>
     </footer>
     
     <%= javascript_include_tag "application" %>
+
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "0f2c7b97-b311-4a36-886f-144703bd1035", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
     
   </body>
 </html>

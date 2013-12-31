@@ -35,7 +35,7 @@ class StoreController < ApplicationController
   # into an @user object, for use here and in the view.
 
   def get_user
-      if current_user.id
+      if current_user
         @user = User.find(current_user.id)
       else
         @user = User.find(1)
